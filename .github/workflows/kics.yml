@@ -29,7 +29,6 @@ jobs:
       - name: Run Kics
         uses: checkmarx/kics-github-action@v2.1.3
         with:
-          path: 'wordpress,mongodb,php-apache'
           ignore_on_exit: results
           output_formats: 'sarif'
           output_path: myResults
