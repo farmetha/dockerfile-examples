@@ -35,6 +35,7 @@ jobs:
           output_formats: 'sarif'
           output_path: myResults
           enable_comments: true
+          bom: true
       - name: Display Kics Results
         run: |
           cat myResults/results.sarif
