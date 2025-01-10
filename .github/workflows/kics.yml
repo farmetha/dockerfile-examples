@@ -30,9 +30,11 @@ jobs:
         uses: checkmarx/kics-github-action@v2.1.3
         with:
           path: '**/Dockerfile'
+          token: ${{ secrets.GITHUB_TOKEN }}
           ignore_on_exit: results
           output_formats: 'sarif'
           output_path: myResults
+          enable_comments: true
       - name: Display Kics Results
         run: |
           cat myResults/results.sarif
