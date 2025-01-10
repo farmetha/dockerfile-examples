@@ -32,12 +32,13 @@ jobs:
           path: './'
           token: ${{ secrets.GITHUB_TOKEN }}
           ignore_on_exit: results
-          output_formats: 'sarif'
+          output_formats: 'json,sarif'
           output_path: myResults
           enable_comments: true
           bom: true
       - name: Display Kics Results
         run: |
+          cat myResults/results.json
           cat myResults/results.sarif
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
